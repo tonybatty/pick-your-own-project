@@ -1,0 +1,21 @@
+.details {
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+
+    &__image {
+        align-self: center;
+        width: 80%;
+    }
+
+    &__name {
+        align-self: center;
+    }
+
+    &__ingredients-text {
+        list-style: none;
+    }
+}
+
