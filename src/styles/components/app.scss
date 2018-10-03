@@ -3,7 +3,6 @@ $secondary-color: #5e648d;
 $background-color: #f3f3f3;
 $text-color: #0e0e0e;
 
-
 * {
   margin: 0;
 }
@@ -12,12 +11,4 @@ body {
   font-family: 'Roboto', sans-serif;
   color: $text-color;
   font-size: 16px;
-}
-
-header {
-  background-color: $primary-color;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

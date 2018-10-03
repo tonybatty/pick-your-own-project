@@ -1,11 +1,11 @@
 import React from "react";
 import Cocktail from "./Cocktail";
 
-import "../styles/components/cocktails.scss";
+import "../styles/components/recipies.scss";
 
-function Cocktails({ drinks, clickOnCocktail }) {
+function Recipies({ drinks, clickOnCocktail }) {
   return (
-    <div className="cocktails">
+    <div className="recipies">
       {drinks.map(drink => (
         <Cocktail
           key={drink.idDrink}
@@ -17,4 +17,4 @@ function Cocktails({ drinks, clickOnCocktail }) {
   );
 }
 
-export default Cocktails;
+export default Recipies;

@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "./Search";
-import Cocktails from "./Cocktails";
+import Recipies from "./Recipies";
 import Details from "./Details";
 
 import "../styles/components/app.scss";
@@ -11,17 +11,22 @@ class App extends React.Component {
     this.state = {
       drinks: [],
       query: "",
-      renderDetails: false
+      renderDetails: true
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
     this.clickOnCocktail = this.clickOnCocktail.bind(this);
+    this.navClick = this.navClick.bind(this);
   }
 
   handleChange(query) {
     console.log(query);
     this.setState({ query });
+  }
+
+  navClick() {
+    
   }
 
   clickOnCocktail(query) {
@@ -47,17 +52,22 @@ class App extends React.Component {
     return (
       <main>
         <header className="header">
-          <div className="nav">
+          <div className="header__search-bar">
             <Search
-              className="search"
               query={this.state.query}
               handleChange={this.handleChange}
               submitSearch={this.submitSearch}
             />
           </div>
+          <div className="header__nav-bar">
+            {/* <Nav
+              className="nav"
+              onClick={this.navClick}
+            /> */}
+          </div>
         </header>
         {this.state.renderDetails ? <Details /> : null}
-        <Cocktails className="cocktails" drinks={this.state.drinks} clickOnCocktail={this.clickOnCocktail} />
+        <Recipies className="recipies" drinks={this.state.drinks} clickOnCocktail={this.clickOnCocktail} />
       </main>
     );
   }

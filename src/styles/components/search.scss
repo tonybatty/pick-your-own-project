@@ -1,0 +1,35 @@
+.search {
+  background-color: #4e5474;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+  }
+}
+
+.nav {
+  display: flex;
+  height: 40px;
+  margin: auto;
+  text-align: center;
+  color: white;
+  font-size: 0.8em;
+
+  &__my-bar {
+    flex: 1;
+    margin: auto;
+  }
+
+  &__recipies {
+    flex: 1;
+    margin: auto;
+  }
+
+  &__favourites {
+    flex: 1;
+    margin: auto;
+  }
+}
