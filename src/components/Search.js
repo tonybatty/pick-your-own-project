@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/components/search.scss";
 
-function Search({ query, handleChange, submitSearch }) {
+function Search({ query, handleChange, submitSearch, clickRecipies, clickMyBar, clickMyFavourites }) {
   return (
     <div className="search">
       <form className="search__form"
@@ -20,9 +20,9 @@ function Search({ query, handleChange, submitSearch }) {
         />
       </form>
       <div className="nav">
-        <p className="nav__my-bar">My Bar</p>
-        <p className="nav__recipies">Recipies</p>
-        <p className="nav__favourites">Favourites</p>
+        <div className="nav__recipies" onClick={event => clickRecipies()}><p>Recipies</p></div>
+        <div className="nav__my-bar" onClick={event => clickMyBar()}><p>My Bar</p></div>
+        <div className="nav__favourites" onClick={event => clickMyFavourites()}><p>Favourites</p></div>
       </div>
     </div>
   );
