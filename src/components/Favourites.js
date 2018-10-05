@@ -3,22 +3,19 @@ import Cocktail from "./Cocktail";
 
 import "../styles/components/recipies.scss";
 
-function Recipies({ drinks, clickOnCocktail, clickOnFavourite, favourites }) {
-  const isFavourite = favourites.find(currentFavourite => {
-    return currentFavourite.idDrink === drinks.idDrink;
-  });
+function Favourites({ drinks, clickOnCocktail, clickOnFavourite, favourites }) {
 
   return (
     <div className="recipies">
-      {drinks.map(drink => (
+      {favourites.map(favourite => (
         <Cocktail
-          key={drink.idDrink}
-          drink={drink}
+          key={favourite.idDrink}
+          drink={favourite}
           clickOnCocktail={clickOnCocktail}
           clickOnFavourite={clickOnFavourite}
           favourites={favourites}
           isFavourite={favourites.find(currentFavourite => {
-            return currentFavourite.idDrink === drink.idDrink;
+            return currentFavourite.idDrink === favourite.idDrink;
           })}
         />
       ))}
@@ -26,4 +23,4 @@ function Recipies({ drinks, clickOnCocktail, clickOnFavourite, favourites }) {
   );
 }
 
-export default Recipies;
+export default Favourites;

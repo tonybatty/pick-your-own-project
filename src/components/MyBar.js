@@ -1,17 +1,24 @@
 import React from "react";
-import Ingredient from "./Ingredient";
+import Cocktail from "./Cocktail";
+import Ingredient from "./ingredient";
 
 import "../styles/components/recipies.scss";
 
-function MyBar({ ingredients, clickOnIngredient }) {
+function MyBar({ ingredients, clickOnCocktail, clickOnFavourite, myBar, addToMyBar }) {
 
   return (
-    <div className="my-bar">
-      {ingredients.map((ingredient, index) => (
+    <div className="recipies">
+      {ingredients.map(ingredient => (
         <Ingredient
-          key={index}
+          key={ingredient.idDrink}
           ingredient={ingredient}
-          clickOnIngredient={clickOnIngredient}
+          clickOnCocktail={clickOnCocktail}
+          clickOnFavourite={clickOnFavourite}
+          myBar={myBar}
+          addToMyBar={addToMyBar}
+          isFavourite={myBar.find(currentFavourite => {
+            return currentFavourite === ingredient.strIngredient1;
+          })}
         />
       ))}
     </div>

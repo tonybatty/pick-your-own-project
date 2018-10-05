@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/components/cocktail.scss";
 
-function Cocktail({
+function MyCocktail({
   drink,
   clickOnCocktail,
   clickOnFavourite,
@@ -11,7 +11,15 @@ function Cocktail({
 }) {
   const ingredientArr = [];
 
-  console.log("*****" + drink.strIngredient1);
+  const details = getDetails(drink);
+
+  function getDetails() {
+    return fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.idDrink}`
+    )
+      .then(response => response.json())
+      .then(result => {   console.log("00" + result.drinks[0].idDrink); result.drinks});
+  }
 
   for (let i = 0; i < 16; i++) {
     let ingredient = drink[`strIngredient${i + 1}`];
@@ -26,6 +34,8 @@ function Cocktail({
       ingredientArr[i] = ingredient;
     }
   }
+
+
 
   return (
     <div className="cocktail" id="drink.idDrink">
@@ -63,4 +73,4 @@ function Cocktail({
   );
 }
 
-export default Cocktail;
+export default MyCocktail;
